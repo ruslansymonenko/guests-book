@@ -1,5 +1,6 @@
 <?php
 error_reporting(-1);
+require_once __DIR__ . '/db.php';
 ?>
 
 <!DOCTYPE html>
@@ -105,7 +106,7 @@ error_reporting(-1);
         </form>
 
         <div class="messages web__form">
-            <div class="card" style="width: 37rem;">
+            <div class="card" style="width: 35rem;">
                 <div class="card-body">
                     <h5 class="card-title">User</h5>
                     <h6 class="card-subtitle mb-2 text-muted">
