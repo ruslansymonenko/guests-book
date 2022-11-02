@@ -1,0 +1,16 @@
+.container {
+    margin-top: 20px;
+}
+
+.web__form{
+    max-width: 600px;
+    margin: 60px auto;
+}
+
+.web__form button {
+    margin-top: 15px;
+}
+
+.welcome__text{
+    text-align: center;
+}
