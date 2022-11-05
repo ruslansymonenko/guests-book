@@ -21,3 +21,8 @@ body {
 .welcome__text{
     text-align: center;
 }
+
+.btn__close{
+    position: absolute;
+    right: 20px;
+}
