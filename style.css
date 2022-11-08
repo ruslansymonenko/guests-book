@@ -2,6 +2,11 @@ body {
     background-color: #74b9ff;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .container {
     margin-top: 20px;
 }

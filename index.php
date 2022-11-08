@@ -11,6 +11,20 @@ if (isset($_POST['registr'])) {
     die;
 }
 
+if (isset($_POST['authorization'])) {
+    login();
+    header("Location: index.php");
+    die;
+}
+
+if (isset($_GET['do']) && $_GET['do'] == 'exit') {
+    if (!empty($_SESSION['user'])) {
+        unset($_SESSION['user']);
+    }
+    header("Location: index.php");
+    die;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -91,13 +105,13 @@ if (isset($_POST['registr'])) {
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Логін</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3">
+                        <input type="text" class="form-control" id="inputEmail3" name="login">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Пароль</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3">
+                        <input type="password" class="form-control" id="inputPassword3" name="pass">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary" name="authorization">
@@ -110,12 +124,13 @@ if (isset($_POST['registr'])) {
         <div class="row">
             <div class="col-md-8">
                 <p class="welcome__text">
-                    Ласкаво просимо User
+                    Ласкаво просимо
+                    <?php echo htmlspecialchars($_SESSION['user']['name']) ?>
                 </p>
             </div>
             <div class="col-md-4">
                 <button type="button" class="btn btn-secondary" name="exit">
-                    Вийти
+                    <a href="?do=exit">Вийти</a>
                 </button>
             </div>
         </div>
